@@ -38,9 +38,11 @@ func _ready():
 	
 	var bb = load("res://blackboard.tres")
 	if not bb: return
-	if not "title_font" in bb: return
-	%Sound.add_theme_font_override("font", bb.title_font)
-	%Display.add_theme_font_override("font", bb.title_font)
+	if "title_font" in bb and bb.title_font:
+		%Sound.add_theme_font_override("font", bb.title_font)
+		%Display.add_theme_font_override("font", bb.title_font)
+	if "control_activate_sound" in bb and bb.control_activate_sound:
+		%Effects_Sound_Test.stream = bb.control_activate_sound
 
 
 
@@ -68,7 +70,10 @@ func _on_effects_vol_value_changed(value):
 	var v := float(value) / 100.0
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("effects"), linear_to_db(v))
 	_INIT.data[EFFECTSVOL] = v
-	if not is_loading: _INIT.Save()
+	if not is_loading: 
+		%Effects_Sound_Test.stop()
+		%Effects_Sound_Test.play()
+		_INIT.Save()
 
 
 func _on_music_vol_value_changed(value):
