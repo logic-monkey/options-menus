@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/options-menus/Display_and_Sound.gd" id="1_cat0m"]
 [ext_resource type="Script" path="res://addons/doodads/control_bleeper.gd" id="2_qduea"]
-[ext_resource type="AudioStream" uid="uid://bghbegjgl8bs1" path="res://addons/doodads/select.wav" id="3_kw2iw"]
+[ext_resource type="AudioStream" uid="uid://bghbegjgl8bs1" path="res://addons/doodads/fauxbit-sounds/select.wav" id="3_kw2iw"]
 
 [node name="Display and Sound" type="MarginContainer"]
 anchors_preset = 15
