@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbgsovnlprxcf"]
+[gd_scene load_steps=5 format=3 uid="uid://bbgsovnlprxcf"]
 
 [ext_resource type="Script" path="res://addons/options-menus/Display_and_Sound.gd" id="1_cat0m"]
 [ext_resource type="Script" path="res://addons/doodads/control_bleeper.gd" id="2_qduea"]
 [ext_resource type="AudioStream" uid="uid://bghbegjgl8bs1" path="res://addons/doodads/fauxbit-sounds/select.wav" id="3_kw2iw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kum1b"]
 
 [node name="Display and Sound" type="MarginContainer"]
 anchors_preset = 15
@@ -26,6 +28,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Sound"
 horizontal_alignment = 1
+
+[node name="sep_smol2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
 
 [node name="Master" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -78,15 +85,25 @@ size_flags_horizontal = 4
 position = Vector2(0, -86)
 script = ExtResource("2_qduea")
 
+[node name="sep_beeg" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
+
 [node name="Display" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Display"
 horizontal_alignment = 1
 
+[node name="sep_smol" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 3
+theme_override_constants/separation = 7
 alignment = 1
 
 [node name="fullscreen" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -99,7 +116,27 @@ text = "Fullscreen"
 position = Vector2(-106, -129)
 script = ExtResource("2_qduea")
 
+[node name="window_1280p" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1280x720p Window"
+
+[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_1280p"]
+position = Vector2(-106, -129)
+script = ExtResource("2_qduea")
+
+[node name="window_640p" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "even SMOLLER"
+
+[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_640p"]
+position = Vector2(-106, -129)
+script = ExtResource("2_qduea")
+
 [connection signal="value_changed" from="VBoxContainer/master_vol" to="." method="_on_master_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/effects_vol" to="." method="_on_effects_vol_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music_vol" to="." method="_on_music_vol_value_changed"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/window_1280p" to="." method="_on_window_1280p_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/window_640p" to="." method="_on_window_640p_button_down"]

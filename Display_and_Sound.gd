@@ -82,3 +82,23 @@ func _on_music_vol_value_changed(value):
 	_INIT.data[MUSICVOL] = v
 	if not is_loading: _INIT.Save()
 
+
+const WSIZE = "window size"
+func _on_window_1280p_button_down():
+	%fullscreen.set_pressed_no_signal(false)
+	DisplayServer.call_deferred("window_set_mode", DisplayServer.WINDOW_MODE_WINDOWED)
+	_INIT.data[FULLSCREEN] = DisplayServer.WINDOW_MODE_WINDOWED
+	_INIT.data[WSIZE] = Vector2i(1280,720)
+	await get_tree().process_frame
+	DisplayServer.call_deferred("window_set_size", _INIT.data[WSIZE])
+	if not is_loading: _INIT.Save()
+
+
+func _on_window_640p_button_down():
+	%fullscreen.set_pressed_no_signal(false)
+	DisplayServer.call_deferred("window_set_mode", DisplayServer.WINDOW_MODE_WINDOWED)
+	_INIT.data[FULLSCREEN] = DisplayServer.WINDOW_MODE_WINDOWED
+	_INIT.data[WSIZE] = Vector2i(640,360)
+	await get_tree().process_frame
+	DisplayServer.call_deferred("window_set_size", _INIT.data[WSIZE])
+	if not is_loading: _INIT.Save()
