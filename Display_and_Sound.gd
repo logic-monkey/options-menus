@@ -8,6 +8,10 @@ var is_loading := false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	if OS.has_feature("web"):
+		%window_1280p.visible = false
+		%window_640p.visible = false
+	
 	if not _INIT.is_loaded: await _INIT.loaded
 	is_loading = true
 	
@@ -25,13 +29,13 @@ func _ready():
 	if EFFECTSVOL in _INIT.data:
 		%effects_vol.value = _INIT.data[EFFECTSVOL] * 100
 	else:
-		%effects_vol.value = 50
+		%effects_vol.value = 100
 	_on_effects_vol_value_changed(%effects_vol.value)
 	
 	if MUSICVOL in _INIT.data:
 		%music_vol.value = _INIT.data[MUSICVOL] * 100
 	else:
-		%music_vol.value = 50
+		%music_vol.value = 100
 	_on_music_vol_value_changed(%music_vol.value)
 	
 	is_loading = false
