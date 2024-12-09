@@ -6,6 +6,7 @@
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+alignment = 1
 script = ExtResource("1_qa3u1")
 
 [node name="name" type="Label" parent="."]
@@ -15,14 +16,13 @@ size_flags_vertical = 0
 text = "Foo"
 
 [node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="control_list" type="VBoxContainer" parent="."]
-layout_mode = 2
-alignment = 2
-
-[node name="add" type="Button" parent="control_list"]
+[node name="button" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-text = " + "
+toggle_mode = true
+text = " bar "
+
+[connection signal="toggled" from="button" to="." method="_on_button_toggled"]
