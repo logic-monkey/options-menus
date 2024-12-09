@@ -16,6 +16,10 @@ func _ready() -> void:
 	if bb and "title_font" in bb: 	
 		%name.add_theme_font_override("font", bb.title_font)
 	await  get_tree().process_frame
+	if "custom_controls" in _INIT.data and control_name in _INIT.data.custom_controls:
+		var event = _INIT.data.custom_controls[control_name]
+		InputMap.action_erase_events(control_name)
+		InputMap.action_add_event(control_name,event)
 	validate_control()
 	
 func validate_control():
@@ -41,3 +45,6 @@ func _input(event: InputEvent) -> void:
 	InputMap.action_add_event(control_name,event)
 	accept_event()
 	%button.button_pressed = false
+	if not "custom_controls" in _INIT.data: _INIT.data["custom_controls"] = {}
+	_INIT.data.custom_controls[control_name] = event
+	_INIT.Save()

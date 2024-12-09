@@ -11,3 +11,9 @@ func _ready() -> void:
 			c.control = b
 			%button_list.add_child(c)
 			c.validate_control()
+
+
+func _on_reset_pressed() -> void:
+	InputMap.load_from_project_settings()
+	_INIT.data.custom_controls = {}
+	for button in %button_list.get_children(): button.validate_control()

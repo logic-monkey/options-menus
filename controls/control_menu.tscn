@@ -27,7 +27,6 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Custom Controls:"
 
@@ -41,6 +40,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 4
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -52,3 +53,5 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = " reset "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/reset" to="." method="_on_reset_pressed"]

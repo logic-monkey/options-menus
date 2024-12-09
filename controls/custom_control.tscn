@@ -6,7 +6,6 @@
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-alignment = 1
 script = ExtResource("1_qa3u1")
 
 [node name="name" type="Label" parent="."]
