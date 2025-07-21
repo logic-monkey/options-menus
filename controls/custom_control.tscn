@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://blsgcp4stqlc3"]
+[gd_scene load_steps=3 format=3 uid="uid://blsgcp4stqlc3"]
 
 [ext_resource type="Script" path="res://addons/options-menus/controls/custom_control.gd" id="1_qa3u1"]
+[ext_resource type="FontFile" uid="uid://bvbehfvnkh14r" path="res://addons/pix-ui/Fami-Sans-Bold.otf" id="2_ybmhy"]
 
 [node name="custom_control" type="HBoxContainer"]
 anchors_preset = 10
@@ -12,6 +13,7 @@ script = ExtResource("1_qa3u1")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_ybmhy")
 text = "Foo"
 
 [node name="Control" type="Control" parent="."]
