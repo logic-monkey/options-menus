@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbgsovnlprxcf"]
 
-[ext_resource type="Script" path="res://addons/options-menus/Display_and_Sound.gd" id="1_cat0m"]
-[ext_resource type="Script" path="res://addons/doodads/control_bleeper.gd" id="2_qduea"]
+[ext_resource type="Script" uid="uid://b1c0bsvbur6tx" path="res://addons/options-menus/Display_and_Sound.gd" id="1_cat0m"]
+[ext_resource type="Script" uid="uid://6ag5uc34rd1g" path="res://addons/doodads/control_bleeper.gd" id="2_qduea"]
 [ext_resource type="AudioStream" uid="uid://bghbegjgl8bs1" path="res://addons/doodads/fauxbit-sounds/select.wav" id="3_kw2iw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kum1b"]
