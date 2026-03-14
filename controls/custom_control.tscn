@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://blsgcp4stqlc3"]
+
+[ext_resource type="Script" path="res://addons/options-menus/controls/custom_control.gd" id="1_qa3u1"]
+[ext_resource type="FontFile" uid="uid://bvbehfvnkh14r" path="res://addons/pix-ui/Fami-Sans-Bold.otf" id="2_ybmhy"]
+
+[node name="custom_control" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_qa3u1")
+
+[node name="name" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_ybmhy")
+text = "Foo"
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = " bar "
+
+[connection signal="toggled" from="button" to="." method="_on_button_toggled"]
