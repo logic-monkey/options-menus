@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbgsovnlprxcf"]
+[gd_scene format=3 uid="uid://bbgsovnlprxcf"]
 
 [ext_resource type="Script" uid="uid://b1c0bsvbur6tx" path="res://addons/options-menus/Display_and_Sound.gd" id="1_cat0m"]
 [ext_resource type="Script" uid="uid://6ag5uc34rd1g" path="res://addons/doodads/control_bleeper.gd" id="2_qduea"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kum1b"]
 
-[node name="Display and Sound" type="MarginContainer"]
+[node name="Display and Sound" type="MarginContainer" unique_id=2084502396]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,119 +18,118 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 script = ExtResource("1_cat0m")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1261912594]
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 4
 alignment = 1
 
-[node name="Sound" type="Label" parent="VBoxContainer"]
+[node name="Sound" type="Label" parent="VBoxContainer" unique_id=787436518]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Sound"
+text = "Sound
+"
 horizontal_alignment = 1
 
-[node name="sep_smol2" type="HSeparator" parent="VBoxContainer"]
+[node name="sep_smol2" type="HSeparator" parent="VBoxContainer" unique_id=1985126728]
 layout_mode = 2
 theme_override_constants/separation = 7
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
 
-[node name="Master" type="Label" parent="VBoxContainer"]
+[node name="Master" type="Label" parent="VBoxContainer" unique_id=1084117290]
 layout_mode = 2
 text = "Master"
 horizontal_alignment = 1
 
-[node name="master_vol" type="HSlider" parent="VBoxContainer"]
+[node name="master_vol" type="HSlider" parent="VBoxContainer" unique_id=1811474618]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ControlBleeper" type="AudioStreamPlayer2D" parent="VBoxContainer/master_vol"]
+[node name="ControlBleeper" type="AudioStreamPlayer2D" parent="VBoxContainer/master_vol" unique_id=340899844]
 script = ExtResource("2_qduea")
 
-[node name="Effects" type="Label" parent="VBoxContainer"]
+[node name="Effects" type="Label" parent="VBoxContainer" unique_id=200785878]
 layout_mode = 2
-text = "Effects
-"
+text = "Effects"
 horizontal_alignment = 1
 
-[node name="effects_vol" type="HSlider" parent="VBoxContainer"]
+[node name="effects_vol" type="HSlider" parent="VBoxContainer" unique_id=769034611]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ControlBleeper2" type="AudioStreamPlayer2D" parent="VBoxContainer/effects_vol"]
+[node name="ControlBleeper2" type="AudioStreamPlayer2D" parent="VBoxContainer/effects_vol" unique_id=1650241319]
 position = Vector2(0, -43)
 script = ExtResource("2_qduea")
 
-[node name="Effects_Sound_Test" type="AudioStreamPlayer2D" parent="VBoxContainer/effects_vol"]
+[node name="Effects_Sound_Test" type="AudioStreamPlayer2D" parent="VBoxContainer/effects_vol" unique_id=1848712094]
 unique_name_in_owner = true
 stream = ExtResource("3_kw2iw")
 bus = &"effects input"
 
-[node name="Music" type="Label" parent="VBoxContainer"]
+[node name="Music" type="Label" parent="VBoxContainer" unique_id=327426819]
 layout_mode = 2
-text = "Music
-"
+text = "Music"
 horizontal_alignment = 1
 
-[node name="music_vol" type="HSlider" parent="VBoxContainer"]
+[node name="music_vol" type="HSlider" parent="VBoxContainer" unique_id=1897399220]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ControlBleeper3" type="AudioStreamPlayer2D" parent="VBoxContainer/music_vol"]
+[node name="ControlBleeper3" type="AudioStreamPlayer2D" parent="VBoxContainer/music_vol" unique_id=2114560620]
 position = Vector2(0, -86)
 script = ExtResource("2_qduea")
 
-[node name="sep_beeg" type="HSeparator" parent="VBoxContainer"]
+[node name="sep_beeg" type="HSeparator" parent="VBoxContainer" unique_id=407537988]
 layout_mode = 2
 theme_override_constants/separation = 14
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
 
-[node name="Display" type="Label" parent="VBoxContainer"]
+[node name="Display" type="Label" parent="VBoxContainer" unique_id=48614586]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Display"
 horizontal_alignment = 1
 
-[node name="sep_smol" type="HSeparator" parent="VBoxContainer"]
+[node name="sep_smol" type="HSeparator" parent="VBoxContainer" unique_id=230237891]
 layout_mode = 2
 theme_override_constants/separation = 7
 theme_override_styles/separator = SubResource("StyleBoxEmpty_kum1b")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=301843396]
 layout_mode = 2
 theme_override_constants/separation = 7
 alignment = 1
 
-[node name="fullscreen" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="fullscreen" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=217763417]
 unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 text = "Fullscreen"
 
-[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/fullscreen"]
+[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/fullscreen" unique_id=1477316923]
 position = Vector2(-106, -129)
 script = ExtResource("2_qduea")
 
-[node name="window_1280p" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="window_1280p" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1150941066]
 unique_name_in_owner = true
 layout_mode = 2
 text = "1280x720p Window"
 
-[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_1280p"]
+[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_1280p" unique_id=342607565]
 position = Vector2(-106, -129)
 script = ExtResource("2_qduea")
 
-[node name="window_640p" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="window_640p" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1601550081]
 unique_name_in_owner = true
 layout_mode = 2
 text = "even SMOLLER"
 
-[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_640p"]
+[node name="ControlBleeper4" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/window_640p" unique_id=267409789]
 position = Vector2(-106, -129)
 script = ExtResource("2_qduea")
 
